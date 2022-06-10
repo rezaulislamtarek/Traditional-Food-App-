@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.food_details.FoodDetailFragment">
+
+    <data>
+        <variable
+            name="food"
+            type="com.diatomicsoft.culturalfoods.model.data.Food" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            drawableImage="@{food.image}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:fontFamily="@font/amarante"
+            android:text="@{food.title}"/>
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:isIndicator="false"
+            android:paddingLeft="16dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:max="5"
+            android:backgroundTint="@color/dark_yellow"
+            android:numStars="5"
+            android:stepSize="1.0"
+            />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="#D5000000"
+                android:fontFamily="@font/allerta_stencil"
+                android:text="@{food.details}"/>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>
